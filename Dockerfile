@@ -1,4 +1,3 @@
-
 FROM node:lts-alpine as build
 WORKDIR /app
 COPY package*.json ./
@@ -7,7 +6,9 @@ COPY . .
 RUN npm run build
 
 
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:lts-alpine
+WORKDIR /app
+COPY --from=build /app/build ./build
+RUN npm install -g serve
+EXPOSE 8081
+CMD ["serve", "-s", "build", "-l", "8081"]
