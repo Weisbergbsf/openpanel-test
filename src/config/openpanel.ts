@@ -11,6 +11,8 @@ else {
 
 console.log('REACT_APP_OPENPANEL_CLIENT_ID:', process.env.REACT_APP_OPENPANEL_CLIENT_ID);
 
+console.log(`Ambiente de produção 2: ${process.env.NODE_ENV} `);
+
 export const op = new OpenPanel({
     clientId: 'SEU_CLIENT_ID_AQUI',
     trackScreenViews: true,
