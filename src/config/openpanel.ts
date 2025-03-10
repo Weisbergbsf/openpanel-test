@@ -1,8 +1,13 @@
 import { OpenPanel } from '@openpanel/web';
 
-if (!process.env.REACT_APP_OPENPANEL_CLIENT_ID) {
-    throw new Error('REACT_APP_OPENPANEL_CLIENT_ID não está definido no .env');
+
+if(process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
 }
+else {
+    console.log(`Ambiente de produção: ${process.env.NODE_ENV} `);
+}
+
 
 console.log('REACT_APP_OPENPANEL_CLIENT_ID:', process.env.REACT_APP_OPENPANEL_CLIENT_ID);
 
