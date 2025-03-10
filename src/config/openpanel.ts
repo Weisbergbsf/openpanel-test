@@ -2,7 +2,7 @@ import { OpenPanel } from '@openpanel/web';
 
 
 if(process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
+    console.log(`Ambiente de desenvolvimento: ${process.env.NODE_ENV} `);
 }
 else {
     console.log(`Ambiente de produção: ${process.env.NODE_ENV} `);
