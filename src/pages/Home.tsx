@@ -4,8 +4,13 @@ import { op } from '../config/openpanel';
 
 const Home: React.FC = () => {
   useEffect(() => {
-    op.track('page_view', {
+    op.track('home_page_view', {
       page: 'home',
+    });
+    op.increment({
+        profileId: "101010",
+        property: "visits",
+        value: 1,
     });
   }, []);
 

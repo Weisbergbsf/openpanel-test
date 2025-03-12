@@ -8,9 +8,16 @@ import './App.css';
 const App: React.FC = () => {
   useEffect(() => {
     op.identify({
-      // Propriedades iniciais opcionais
       app: 'openpanel-test',
       startedAt: new Date().toISOString(),
+      profileId: "101010",
+      firstName: "Weisberg",
+      lastName: "Fontes",
+      email: "weisbergbsf@gmail.com"
+    });
+    op.setGlobalProperties({
+      app_version: '1.0.2',
+      environment: process.env.NODE_ENV,
     });
   }, []);
 

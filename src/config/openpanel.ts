@@ -1,22 +1,16 @@
 import { OpenPanel } from '@openpanel/web';
 
 
-if(process.env.NODE_ENV !== 'production') {
-    console.log(`Ambiente de desenvolvimento: ${process.env.NODE_ENV} `);
+if (!process.env.REACT_APP_OPENPANEL_CLIENT_ID) {
+    console.error('REACT_APP_OPENPANEL_CLIENT_ID não está definido no .env');
 }
-else {
-    console.log(`Ambiente de produção: ${process.env.NODE_ENV} `);
-}
-
 
 console.log('REACT_APP_OPENPANEL_CLIENT_ID:', process.env.REACT_APP_OPENPANEL_CLIENT_ID);
 
-console.log(`Ambiente de produção 2: ${process.env.NODE_ENV} `);
-
 export const op = new OpenPanel({
-    clientId: 'SEU_CLIENT_ID_AQUI',
+    clientId: "50b1d5c3-4a10-4b17-b610-8e6bcedc8052",
     trackScreenViews: true,
     trackOutgoingLinks: true,
     trackAttributes: true,
-    // apiUrl: 'https://sua-vps.com/api'
+    apiUrl: 'https://srv697286.hstgr.cloud/api'
 });

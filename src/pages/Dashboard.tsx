@@ -4,8 +4,13 @@ import { op } from '../config/openpanel';
 
 const Dashboard: React.FC = () => {
   useEffect(() => {
-    op.track('page_view', {
+    op.track('dashboard_page_view', {
       page: 'dashboard',
+    });
+    op.increment({
+        profileId: "101010",
+        property: "visits",
+        value: 1,
     });
   }, []);
 

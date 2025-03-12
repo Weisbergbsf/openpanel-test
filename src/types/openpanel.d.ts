@@ -21,7 +21,8 @@ export interface OpenPanel {
       identify(properties: Record<string, any>): void;
       setGlobalProperties(properties: Record<string, any>): void;
       alias(alias: string): void;
-      increment(eventName: string, value?: number): void;
+      //increment(eventName: string, value?: number): void;
+      increment(payload?: Record<string, any>): void;
       decrement(eventName: string, value?: number): void;
       clear(): void;
     }
